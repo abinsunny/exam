@@ -65,6 +65,7 @@ if(isset($keyword[1])){
 $count= $obj->listFileTableTotalCount($condition);
 $page=ceil($count/$pagelimt);
 $pPage=($cPage>1)? $cPage-1:1;
+$nPage=($cPage!=$page)? $cPage+1:$page;
 ?>
 	<ul class="pagination">
 		<li >
@@ -77,7 +78,7 @@ $pPage=($cPage>1)? $cPage-1:1;
 		</li>
 		<?php }?>
 		<li class="page-item">
-			<a class="page-link active" data-href="<?= $cPage+1;?>" href="#">Next</a>
+			<a class="page-link active" data-href="<?= $nPage;?>" href="#">Next</a>
 		</li>
 	</ul>
 	<?/*pagination area ends*/?>
